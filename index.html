@@ -35,11 +35,9 @@
 
 <div class="container">
 <header class="jumbotron text-center"><h1 style="font-size: 2rem;">COVID-19 ट्रैकर</h1><h6>भारत</h6></header>
-	<div class="row">
-		<div class="col-md-7 mb-5">
+		<div class="col-md-12 mb-5">
 			<div class="card">
 				<div class="card-body">
-					<div class="row">
 						<div class="box confirmed">
 							<div class="text-center">
 								<span id="totalConfirmed" class="num"></span><br />
@@ -65,14 +63,12 @@
 								<span class="label">मृत्यु</span>
 							</div>
 						</div>
-					</div><!--Row Div-->
 				</div><!--Card Body Div-->
 			</div><!--Card Div-->
 		
 			<div class="card mt-5">
 				<div class="card-body">
 					<h5 class="m-3 text-center">कल का डेटा</h5>
-					<div class="row">
 						<div class="box confirmed">
 								<div class="text-center">
 									<span id="yConfirmed" class="num"></span><br />								
@@ -97,18 +93,11 @@
 									<span class="label">मृत्यु हुई</span>
 								</div>
 							</div>
-					</div><!--Row Div-->
 				</div><!--Card-Body Div-->
 			</div><!--Card Div-->
 
-		</div><!--Col-md-6-->
-
-		<div class="col-md-5">
-			<button data-toggle="collapse" class="btn btn-info btn-block" data-target="#dataTable">राज्यों के हिसाब से डाटा <i class="fa fa-chevron-down"></i></button>
-			<center><table id="dataTable" class="collapse table table-bordered table-responsive thead-dark"></table></center>
-		</div><!--Data table Div Col-md-8-->
-
-	</div><!--Row Div-->
+			<button class="btn btn-info btn-block mt-5 mb-2">राज्यों के हिसाब से डाटा <i class="fa fa-chevron-down"></i></button>
+			<center><table id="dataTable" class="table table-bordered table-responsive thead-dark"></table></center>
 </div><!--Container Div-->
 
 
