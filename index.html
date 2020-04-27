@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<!-- Primary Meta Tags -->
+<title>COVID-19 Tracker</title>
+<meta name="title" content="COVID-19 Tracker">
+<meta name="description" content="A better approach to COVID-19 Tracker with simple data and visualisation">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://metatags.io/">
+<meta property="og:title" content="COVID-19 Tracker">
+<meta property="og:description" content="A better approach to COVID-19 Tracker with simple data and visualisation">
+<meta property="og:image" content="./img/coronavirus-m.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://metatags.io/">
+<meta property="twitter:title" content="COVID-19 Tracker">
+<meta property="twitter:description" content="A better approach to COVID-19 Tracker with simple data and visualisation">
+<meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./style.css?v=2">
+<title>COVID-19 Tracker</title>
+</head>
+<body>
+
+<div id="loading">
+	<img src="./img/loader.gif" /><br />
+</div>
+
+<div class="container">
+<header class="jumbotron text-center"><h1 style="font-size: 2rem;">COVID-19 ट्रैकर</h1><h6>भारत</h6></header>
+	<div class="row">
+		<div class="col-md-7 mb-5">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="box confirmed">
+							<div class="text-center">
+								<span id="totalConfirmed" class="num"></span><br />
+								<span class="label" id="new_cases"></span><br />							
+								<span class="label">संक्रमित मिले</span>
+							</div>
+						</div>
+						<div class="box active">
+							<div class="text-center">
+								<span id="totalActive" class="num"></span><br />								
+								<span class="label">अभी संक्रमित हैं</span>
+							</div>
+						</div>
+						<div class="box recovered">
+							<div class="text-center">
+								<span id="totalRecovered" class="num"></span><br />								
+								<span class="label">ठीक हुए</span>
+							</div>
+						</div>
+						<div class="box deaths">
+							<div class="text-center">
+								<span id="totalDeaths" class="num"></span><br />								
+								<span class="label">मृत्यु</span>
+							</div>
+						</div>
+					</div><!--Row Div-->
+				</div><!--Card Body Div-->
+			</div><!--Card Div-->
+		
+			<div class="card mt-5">
+				<div class="card-body">
+					<h5 class="m-3 text-center">कल का डेटा</h5>
+					<div class="row">
+						<div class="box confirmed">
+								<div class="text-center">
+									<span id="yConfirmed" class="num"></span><br />								
+									<span class="label">संक्रमित मिले थे</span>
+								</div>
+							</div>
+							<div class="box active">
+								<div class="text-center">
+									<span id="yUntilCases" class="num"></span><br />								
+									<span class="label">कल तक संक्रमित थे</span>
+								</div>
+							</div>
+							<div class="box recovered">
+								<div class="text-center">
+									<span id="yRecovered" class="num"></span><br />								
+									<span class="label">ठीक हुए</span>
+								</div>
+							</div>
+							<div class="box deaths">
+								<div class="text-center">
+									<span id="yDeaths" class="num"></span><br />								
+									<span class="label">मृत्यु हुई</span>
+								</div>
+							</div>
+					</div><!--Row Div-->
+				</div><!--Card-Body Div-->
+			</div><!--Card Div-->
+
+		</div><!--Col-md-6-->
+
+		<div class="col-md-5">
+			<button data-toggle="collapse" class="btn btn-info btn-block" data-target="#dataTable">राज्यों के हिसाब से डाटा <i class="fa fa-chevron-down"></i></button>
+			<center><table id="dataTable" class="collapse table table-bordered table-responsive thead-dark"></table></center>
+		</div><!--Data table Div Col-md-8-->
+
+	</div><!--Row Div-->
+</div><!--Container Div-->
+
+
+<script src="./js/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha256-TQq84xX6vkwR0Qs1qH5ADkP+MvH0W+9E7TdHJsoIQiM=" crossorigin="anonymous"></script>
+<script src="./js/app.js"></script>
+<script>
+	setTimeout("location.reload(true);", 300000);
+</script>
+</body>
+</html>

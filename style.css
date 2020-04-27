@@ -1,0 +1,94 @@
+*{
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	background-image: url('./img/background.png');
+	background-size: cover;
+	background-attachment: fixed;
+	min-height: 100vh;
+}
+
+table {
+	font-size: 12px;
+}
+
+.jumbotron {
+	background-image: url('./img/coronavirus.jpg');
+	background-size: cover;
+	color: #fff;
+}
+
+#loading {
+	margin: 0px;
+	position: fixed;
+	z-index: 1000;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(255,255,255,0.95);
+}
+#dataTable th,td {
+	text-align: center;
+}
+
+.box {
+	width: 20%;
+	height: 150px;
+	margin: 5px 2.5%;
+	/*border: 1px solid #ccc;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 6px;
+}
+.label {
+	font-size: 12px;
+}
+.num {
+	font-size: 18px;
+	font-weight: bolder;
+}
+
+.confirmed {
+	background-color: #ff073a;
+	color: #fff;
+}
+.active {
+	background-color: #007bff;
+	color: #fff;
+}
+.recovered {
+	background-color: #28a745;
+	color: #fff;
+}
+.deaths {
+	background-color: #6c757d;
+	color: #fff;
+}
+
+@media only screen and (max-width: 700px)
+{
+	body {
+		font-size: 13px;
+	}
+	.jumbotron {
+		background-image: url('./img/coronavirus-m.jpg');
+		background-size: cover;
+	}
+	.box {
+		height: 100px;
+	}
+	.num {
+		font-size: 13px;
+	}
+	.label {
+		font-size: 10px;
+	}
+}
