@@ -43,8 +43,7 @@ states = {
     LD: "लक्षद्वीप",
     SK: "सिक्किम"
 }
-totalConfirmed = 0
-totalDeaths = 0
+
 
 fetch('https://api.covid19india.org/data.json')
   .then((response) => {
@@ -66,8 +65,20 @@ fetch('https://api.covid19india.org/data.json')
     document.getElementById('totalDeaths').innerHTML = formatNum(data.statewise[0].deaths);
 
     // Yesterday's Report
-    latestDate = data.cases_time_series.length-1;
-    document.getElementById('date').innerHTML = "( " + data.cases_time_series[latestDate].date + ")";
+    date = new Date();
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    yesterday = new Date(date);
+    yesterday.setDate(date.getDate() - 1);
+    yesterday = yesterday.getDate() + " " + months[yesterday.getMonth()] + " ";
+
+
+    for(i = 0; i < data.cases_time_series.length; i++) {
+        if(data.cases_time_series[i].date == yesterday)
+            latestDate = i;
+    }
+    //console.log(latestDate);
+
+    document.getElementById('date').innerHTML = "( " + yesterday + ")";
     document.getElementById('yUntilCases').innerHTML = data.cases_time_series[latestDate].totalconfirmed;
     document.getElementById('yConfirmed').innerHTML = data.cases_time_series[latestDate].dailyconfirmed;
     document.getElementById('yRecovered').innerHTML = data.cases_time_series[latestDate].dailyrecovered;
@@ -82,5 +93,5 @@ fetch('https://api.covid19india.org/data.json')
     currRec = parseInt(data.statewise[0].recovered) - parseInt(data.cases_time_series[latestDate].totalrecovered);
     currDec = parseInt(data.statewise[0].deaths) - parseInt(data.cases_time_series[latestDate].totaldeceased);
 
-    document.getElementById('todayStats').innerHTML = '<p>' + data.cases_time_series[latestDate].date + 'रात 11 बजे से अब तक,</p><p><span style="color:red;"><b>' + currConf + '</b></span> नए संक्रमण के मामले सामने आये|</p><p><span style="color: green;"><b>' + currRec + '</b></span> ठीक हुए,</p><p>और <span style="color:gray;"><b>' + currDec + '</b></span> की मृत्यु की जानकारी मिली|</p>';
+    document.getElementById('todayStats').innerHTML = '<p>' + yesterday + 'से अब तक,</p><p><span style="color:red;"><b>' + currConf + '</b></span> नए संक्रमण के मामले सामने आये|</p><p><span style="color: green;"><b>' + currRec + '</b></span> ठीक हुए,</p><p>और <span style="color:gray;"><b>' + currDec + '</b></span> की मृत्यु की जानकारी मिली|</p>';
 });
